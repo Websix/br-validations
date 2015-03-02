@@ -21,9 +21,38 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
     /**
      * @expectedException \Websix\BrValidations\Exceptions\EmptyArgumentException
      */
-    public function testEmptyCnpj()
+    public function testEmptyStringCnpj()
     {
         $this->assertTrue($this->cnpjValidator->validate(''));
+    }
+
+    /**
+     * @expectedException \Websix\BrValidations\Exceptions\EmptyArgumentException
+     */
+    public function testNullCnpj()
+    {
+        $this->assertTrue($this->cnpjValidator->validate(null));
+    }
+
+    /**
+     * @expectedException \Websix\BrValidations\Exceptions\EmptyArgumentException
+     */
+    public function testEmptyArrayCnpj()
+    {
+        $this->assertTrue($this->cnpjValidator->validate(array()));
+    }
+
+    /**
+     * @expectedException \Websix\BrValidations\Exceptions\NotStringException
+     */
+    public function testArrayCnpj()
+    {
+        $arr = [
+            '00.776.574/0006-60',
+            0077657400066,
+            '0077657400066'
+        ];
+        $this->assertTrue($this->cnpjValidator->validate($arr));
     }
 
     /**
@@ -57,5 +86,15 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
     {
         $this->assertTrue($this->cnpjValidator->validate('OO776574OOO66O'));
     }
+
+    /**
+     * @expectedException \Websix\BrValidations\Exceptions\NotStringException
+     */
+    public function testFailIfNumber()
+    {
+        $this->assertTrue($this->cnpjValidator->validate(00776574000660));
+    }
+
+
 
 }
