@@ -2,8 +2,6 @@
 
 namespace Websix\BrValidations\Validations;
 
-require_once __DIR__ . "/../../vendor/autoload.php";
-
 class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
 
     public function setUp() {
