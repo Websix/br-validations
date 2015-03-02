@@ -30,8 +30,6 @@ class CnpjValidator {
 
         $ver2 = $this->calculateDigit($num);
 
-        var_dump($ver1.$ver2, $dig);
-
         if(($ver1 . $ver2) === $dig)
             return true;
 
