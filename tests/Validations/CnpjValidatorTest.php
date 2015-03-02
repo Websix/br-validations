@@ -112,7 +112,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
             $this->cnpjValidator->validate('77777777777777');
             $this->cnpjValidator->validate('00776574100660');
             $this->cnpjValidator->validate('00776574000661');
-        } catch (InvalidCnpjException $e) {
+        } catch (\InvalidCnpjException $e) {
             throw $e;
         }
     }
