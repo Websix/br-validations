@@ -33,7 +33,7 @@ Validates a CNPJ number against his validation digits
       case $e instanceof Exceptions\InvalidCnpjException:
         // Is really a invalid CNPJ
         // ...
-      case $e instancef Exceptions\EmptyArgumentException;
+      case $e instanceof Exceptions\EmptyArgumentException;
         // If the CNPJ is an empty string or something like that
         // ...
       case $e instanceof Exceptions\InvalidLengthException
@@ -52,11 +52,11 @@ Validates a CNPJ number against his validation digits
 Numbers planned to be added
 + CPF
 + State Inscription Number (Inscrição estadual)
-+  OAB
-+  CRM
-+  CREA
-+  PIS/PASEP
-+  Passports
++ OAB
++ CRM
++ CREA
++ PIS/PASEP
++ Passports
 
 Usage
 -----
