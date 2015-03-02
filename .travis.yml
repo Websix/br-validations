@@ -12,6 +12,6 @@ notifications:
 before_install:
 - curl -sS https://getcomposer.org/installer | php
 install:
-- php composer.phar install -- --require-dev
+- php composer.phar install
 script:
 - php composer.phar test
