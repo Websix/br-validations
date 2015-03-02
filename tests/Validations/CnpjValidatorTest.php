@@ -45,9 +45,17 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
     /**
      * @expectedException \Websix\BrValidations\Exceptions\NotOnlyDigitsException
      */
-    public function testFailNotOnlyDigits()
+    public function testFailWithMask()
     {
         $this->assertTrue($this->cnpjValidator->validate('00.776.574/0006-60'));
+    }
+
+    /**
+     * @expectedException \Websix\BrValidations\Exceptions\NotOnlyDigitsException
+     */
+    public function testNotOnlyDigits()
+    {
+        $this->assertTrue($this->cnpjValidator->validate('OO776574OOO66O'));
     }
 
 }
