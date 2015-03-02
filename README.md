@@ -61,7 +61,19 @@ Numbers planned to be added
 Usage
 -----
 
-Shortly it will be on composer so then you will be able to install from there
+Install from [Composer](http://getcomposer.org):
+
+```sh
+composer require "websix/br-validations"
+```
+
+And add it with the ```php use ``` keyword:
+
+```php
+use Websix\BrValidations\Validations\CnpjValidator;
+
+$validator = new CnpjValidator();
+```
 
 License
 -------
