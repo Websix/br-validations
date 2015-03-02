@@ -8,8 +8,6 @@ class CnpjValidator {
 
     const CNPJ_REQUIRED_LENGTH = 14;
 
-    const MULTIPLY_MATRIX = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-
     private $multiMatrix;
 
     private $resMatrix;
@@ -39,7 +37,7 @@ class CnpjValidator {
 
     private function clean()
     {
-        $this->multiMatrix = self::MULTIPLY_MATRIX;
+        $this->multiMatrix = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
         $this->resMatrix = [];
     }
 
