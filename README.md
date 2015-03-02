@@ -33,16 +33,16 @@ Validates a CNPJ number against his validation digits
       case $e instanceof Exceptions\InvalidCnpjException:
         // Is really a invalid CNPJ
         // ...
-      case $e instanceof Exceptions\EmptyArgumentException;
+      case $e instanceof Exceptions\EmptyArgumentException:
         // If the CNPJ is an empty string or something like that
         // ...
-      case $e instanceof Exceptions\InvalidLengthException
+      case $e instanceof Exceptions\InvalidLengthException:
         // If the CNPJ do not have his correct length
         // ...
-      case $e instanceof Exceptions\NotOnlyDigitsException;
+      case $e instanceof Exceptions\NotOnlyDigitsException:
         // If the passed CNPJ has something other than digits in the string
         // ...
-      case $e instanceof Exceptions\NotStringException;
+      case $e instanceof Exceptions\NotStringException:
         // if the passed CNPJ not is a string
         // ...
     }
