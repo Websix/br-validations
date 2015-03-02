@@ -3,6 +3,8 @@ br-validations
 
 Common validations for Brazillian numbers, such as CPF, CNPJ and others
 
+[![Build Status](https://travis-ci.org/Websix/br-validations.svg)](https://travis-ci.org/Websix/br-validations)
+
 Numbers planned to be added
 + CPF
 + CNPJ
