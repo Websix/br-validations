@@ -2,7 +2,7 @@
 
 namespace Websix\BrValidations\Exceptions;
 
-class InvalidLengthExceptionTest extends \PHPUnit_Framework_TestCase {
+class NotOnlyDigitsExceptionTest extends \PHPUnit_Framework_TestCase {
 
     use ClassExistsTestCaseTrait;
 
