@@ -1,6 +1,6 @@
 <?php
 
-namespace  Websix\BrValidations\Exceptions;
+namespace Websix\BrValidations\Exceptions;
 
 class EmptyArgumentException extends \InvalidArgumentException {
 
