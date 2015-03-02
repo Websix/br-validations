@@ -14,7 +14,7 @@
     "minimum-stability": "stable",
     "require": {},
     "scripts": {
-        "test": "~/.composer/vendor/phpunit --colors tests"
+        "test": "~/.composer/vendor/bin/phpunit --colors -c phpunit.xml"
     },
     "autoload": {
         "psr-4": {
