@@ -13,6 +13,9 @@
     ],
     "minimum-stability": "stable",
     "require": {},
+    "scripts": {
+        "test": "~/.composer/vendor/phpunit --colors tests"
+    },
     "autoload": {
         "psr-4": {
             "Websix\\BrValidations\\": [
