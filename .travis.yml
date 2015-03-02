@@ -11,7 +11,7 @@ notifications:
     secure: YyHYh3X772pm/iDUdSYTfsuJn5mQgyBthXVahQZZBTObI7bANDEFEbdL4N7ENQosi8jTfDCxxcMNsq5ApFtBcJwrWySVMg6pv2GpgV/phjt4CHxql9qPxeTbZC2Q/9FTPZWHVJOncLgMSCP7RNFtHvg8WCWf80dEaY0sXfz4N74=
 before_install:
 - sudo apt-get update
-- sudo apt-get upgrade
+- sudo apt-get upgrade -y
 - curl -sS https://getcomposer.org/installer | php
 install:
 - php composer.phar install -- --require-dev
