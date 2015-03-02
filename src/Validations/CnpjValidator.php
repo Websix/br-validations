@@ -35,7 +35,7 @@ class CnpjValidator {
 
     private function assertOnlyDigits($cnpj)
     {
-        if(!preg_match('/\d+/', $cnpj))
+        if(!preg_match('/^\d+$/', $cnpj))
             throw new Exceptions\NotOnlyDigitsException('Must be only digits');
         else
             return true;
