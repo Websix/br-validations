@@ -6,7 +6,7 @@ trait ClassExistsTestCaseTrait {
 
     public function testClassExists()
     {
-        $this->assertTrue(class_exists(__NAMESPACE__ . '\\' . str_replace('Test','', __CLASS__)));
+        $this->assertTrue(class_exists(str_replace('Test','', __CLASS__)));
     }
 
 }
