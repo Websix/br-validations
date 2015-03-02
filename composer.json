@@ -1,6 +1,8 @@
 {
     "name": "websix/br-validations",
     "description": "Common validations for Brazillian numbers, such as CPF, CNPJ and others",
+    "keywords": ["CNPJ", "CPJ", "Brazil", "Brasil", "Brazillian", "Validation", "Validators"],
+    "type": "library",
     "require-dev": {
         "phpunit/phpunit": "~4.5"
     },
@@ -8,11 +10,13 @@
     "authors": [
         {
             "name": "Reinaldo A. C. Rauch",
-            "email": "reinaldorauch@gmail.com"
+            "email": "reinaldorauch@gmail.com",
+            "homepage": "facebook.com/reinaldo.rauch",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.4.*"
+        "php": ">=5.4.0"
     },
     "minimum-stability": "stable",
     "require": {},
