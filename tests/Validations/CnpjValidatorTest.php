@@ -15,6 +15,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidCnpj()
     {
+        $this->assertTrue($this->cnpjValidator->validate('11222333000181'));
         $this->assertTrue($this->cnpjValidator->validate('00776574000660'));
     }
 
@@ -23,7 +24,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testEmptyStringCnpj()
     {
-        $this->assertTrue($this->cnpjValidator->validate(''));
+        $this->cnpjValidator->validate('');
     }
 
     /**
@@ -31,7 +32,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testNullCnpj()
     {
-        $this->assertTrue($this->cnpjValidator->validate(null));
+        $this->cnpjValidator->validate(null);
     }
 
     /**
@@ -39,7 +40,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testEmptyArrayCnpj()
     {
-        $this->assertTrue($this->cnpjValidator->validate(array()));
+        $this->cnpjValidator->validate(array());
     }
 
     /**
@@ -52,7 +53,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
             0077657400066,
             '0077657400066'
         ];
-        $this->assertTrue($this->cnpjValidator->validate($arr));
+        $this->cnpjValidator->validate($arr);
     }
 
     /**
@@ -60,7 +61,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testMinorLength()
     {
-        $this->assertTrue($this->cnpjValidator->validate('0077657400066'));
+        $this->cnpjValidator->validate('0077657400066');
     }
 
     /**
@@ -68,7 +69,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testMajorLength()
     {
-        $this->assertTrue($this->cnpjValidator->validate('007765740006600'));
+        $this->cnpjValidator->validate('007765740006600');
     }
 
     /**
@@ -76,7 +77,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testFailWithMask()
     {
-        $this->assertTrue($this->cnpjValidator->validate('00.776.574/0006-60'));
+        $this->cnpjValidator->validate('00.776.574/0006-60');
     }
 
     /**
@@ -84,7 +85,7 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testNotOnlyDigits()
     {
-        $this->assertTrue($this->cnpjValidator->validate('OO776574OOO66O'));
+        $this->cnpjValidator->validate('OO776574OOO66O');
     }
 
     /**
@@ -92,9 +93,27 @@ class CpnjValidatorTest extends \PHPUnit_Framework_TestCase {
      */
     public function testFailIfNumber()
     {
-        $this->assertTrue($this->cnpjValidator->validate(00776574000660));
+        $this->cnpjValidator->validate(00776574000660);
     }
 
-
-
+    /**
+     * @expectedException \Websix\BrValidations\Exceptions\InvalidCnpjException
+     */
+    public function testInvalidCnpj()
+    {
+        try {
+            $this->cnpjValidator->validate('00000000000000');
+            $this->cnpjValidator->validate('11111111111111');
+            $this->cnpjValidator->validate('22222222222222');
+            $this->cnpjValidator->validate('33333333333333');
+            $this->cnpjValidator->validate('44444444444444');
+            $this->cnpjValidator->validate('55555555555555');
+            $this->cnpjValidator->validate('66666666666666');
+            $this->cnpjValidator->validate('77777777777777');
+            $this->cnpjValidator->validate('00776574100660');
+            $this->cnpjValidator->validate('00776574000661');
+        } catch (InvalidCnpjException $e) {
+            throw $e;
+        }
+    }
 }
