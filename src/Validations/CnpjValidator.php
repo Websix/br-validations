@@ -8,8 +8,8 @@ class CnpjValidator {
 
     public function validate($cnpj) {
         $this->assertNotEmpty($cnpj);
-        $this->assertLength($cnpj, 14);
         $this->assertOnlyDigits($cnpj);
+        $this->assertLength($cnpj, 14);
 
 
         $len = strlen($cnpj) - 2;
@@ -28,7 +28,7 @@ class CnpjValidator {
     private function assertLength($cnpj, $length)
     {
         if(strlen($cnpj) !== $length)
-            throw new InvalidLengthException(sprintf('Length different from %d', $length));
+            throw new Exceptions\InvalidLengthException(sprintf('Length different from %d', $length));
         else
             return true;
     }
@@ -36,7 +36,7 @@ class CnpjValidator {
     private function assertOnlyDigits($cnpj)
     {
         if(!preg_match('/\d+/', $cnpj))
-            throw new NotOnlyDigitsException('Must be only digits');
+            throw new Exceptions\NotOnlyDigitsException('Must be only digits');
         else
             return true;
     }
